@@ -1,0 +1,27 @@
+{% extends 'base/main.html' %} {% load static %} {% block content %}
+<div class="header-bar px-4 py-2">
+  <h3 style="margin-top: 10px">Register</h3>
+</div>
+
+<div class="p-3">
+  <form method="post">
+    {% csrf_token %}
+    <label placeholder="userr"> {{form.username.label}} </label>
+    {{form.username}}
+    <label> {{form.password1.label}} </label>
+    {{form.password1}}
+    <label> {{form.password2.label}} </label>
+    {{form.password2}}
+    <input
+      style="margin-top: 15px"
+      type="submit"
+      value="Register"
+      class="button"
+    />
+  </form>
+
+  <p style="margin-top: 10px">
+    Already have an account ?<a href="{% url 'login' %}"> Login</a>
+  </p>
+</div>
+{% endblock content%}

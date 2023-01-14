@@ -1,0 +1,14 @@
+{% extends 'base/main.html' %} {% load static %} {% block content %}
+
+<div class="header-bar p-3">
+  <a href=" {% url 'tasks' %} " style="font-size: 20px">&#8592; Go Back</a>
+</div>
+
+<div class="p-4">
+  <form action="" method="POST">
+    {% csrf_token %} {{form.as_p}}
+    <input type="submit" value="Submit" class="button" />
+  </form>
+</div>
+
+{% endblock content %}
